@@ -6,16 +6,22 @@
   </head>
   <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 
-  <!-- https://aframe.io/docs/1.0.0/guides/building-a-minecraft-demo.html -->
   <body>
 
     <a-scene>
 
-      <a-cylinder id="ground" src="https://cdn.aframe.io/a-painter/images/floor.jpg" radius="30" height="0.1"></a-cylinder>
+      <a-assets>
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+        <a-asset-item id="bread-obj" src="./assets/bread/bread01.obj"></a-asset-item>
+        <a-asset-item id="bread-mtl" src="./assets/bread/bread01.mtl"></a-asset-item>
+      </a-assets>
 
-      <a-sky id="background" src="https://cdn.aframe.io/a-painter/images/sky.jpg" theta-length="90" radius="30"></a-sky>
+      <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1"></a-cylinder>
 
-      <a-entity obj-model="obj:url(./assets/bread/bread01.obj); mtl:url(./assets/bread/bread01.mtl)" position="0 5 0"></a-entity>
+      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+
+      <a-entity obj-model="obj:#bread-obj; mtl:#bread-mtl" position="0 5 0"></a-entity>
 
     </a-scene>
 
