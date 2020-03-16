@@ -9,26 +9,27 @@
 
   <body>
 
-    <a-scene>
+    <a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
 
       <a-assets>
-        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
-        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+
         <a-asset-item id="bread-obj" src="./assets/bread/bread01.obj"></a-asset-item>
         <a-asset-item id="bread-mtl" src="./assets/bread/bread01.mtl"></a-asset-item>
-      </a-assets>
+      <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
+      <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
+    </a-assets>
 
-      <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1"></a-cylinder>
+      <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1" material="" geometry=""></a-cylinder>
 
-      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30" material="" geometry=""></a-sky>
 
-      <a-entity obj-model="obj:#bread-obj; mtl:#bread-mtl" position="0 1 0"></a-entity>
+      <a-entity obj-model="obj: ./assets/bread/bread01.obj; mtl: ./assets/bread/bread01.mtl" position="0 1.37418 0" visible="" scale="0.2 0.2 0.2"></a-entity>
 
-      <a-camera twoway-motion="speed: 35" nonMobileLoad=true>
-        <a-cursor color="#FAFAFA"></a-cursor>
+      <a-camera twoway-motion="speed: 35" nonmobileload="true" camera="" position="0.12221680330476949 1.6 1.6016631867871665" rotation="-17.761691649055535 1.1459155902616618 0" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="" fog="color: #cccccc; density: 10">
+        <a-cursor color="#FAFAFA" material="" raycaster="" cursor="" geometry=""></a-cursor>
       </a-camera>
 
-    </a-scene>
+    <div class="a-loader-title" style="display: none;">A-Frame environment test</div></a-scene>
 
   </body>
 </html>
